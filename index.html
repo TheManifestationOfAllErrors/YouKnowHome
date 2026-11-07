@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouKnowTheHome</title>
+  <link rel="icon" type="image/jpeg" href="Assets/site-icon.jpg">
+  <!-- Pixel Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="page-center-button" id="center-window-button" type="button" aria-label="Center the open window" title="Center window">
+    <img src="https://cdn-icons-png.flaticon.com/512/6153/6153165.png" alt="">
+  </button>
+  <img class="rules-page-wallpaper" src="https://media1.tenor.com/m/cxZ2d_12XY8AAAAd/pixelart-pixel.gif" alt="" aria-hidden="true">
+  <video class="interests-page-wallpaper" src="Assets/golden-forest-pixel-moewalls-com.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+
+  <div class="window" id="greetingWindow">
+    <!-- Title Bar -->
+    <div class="title-bar">
+      <div class="title-button"></div>
+      <span class="title-text" id="dialogTitle">欢迎欢迎！</span>
+      <div class="title-buttons-right">
+        <div class="title-button"></div>
+        <button class="title-button" id="close-button" type="button" aria-label="Close tab">X</button>
+      </div>
+   </div>
+
+    <!-- Inner Window Body -->
+    <div class="content">
+      <div id="greeting-view">
+        <p class="cn-text">恭喜获得小猫一只</p>
+        <p class="en-text">You have received a cat.</p>
+
+        <!-- One of the four pixel cats is selected when the page opens because its fun -->
+        <img id="random-cat" class="cat-icon" src="Assets/cat1.png" alt="Pixel cat">
+
+        <button class="ok-btn">O k</button>
+      </div>
+
+      <div class="loading-container" id="loading-view">
+        <p class="loading-message">Receiving your cat...</p>
+        <div class="progress-track">
+         <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-percentage" id="progressText">0%</p>
+      </div>
+
+      <div class="success-view" id="success-view">
+        <p>Congratulations!</p>
+        <p>You got a cat!</p>
+        <img id="success-cat" class="success-cat" src="Assets/cat1.png" alt="Your cat">
+      </div>
+    </div>
+  </div>
+
+  <div class="window profile-window" id="profileWindow">
+    <div class="window-header">
+      <span class="title-text">Profile.exe</span>
+      <div class="title-buttons-right">
+        <button class="win-btn" id="profile-close-button" type="button" aria-label="Close profile">X</button>
+      </div>
+    </div>
+
+    <div class="tabs-bar">
+      <button class="tab active" type="button" data-profile-home data-profile-page="home">Home</button>
+      <button class="tab" type="button" data-profile-rules data-profile-page="rules">Rules</button>
+      <button class="tab" type="button" data-profile-interests data-profile-page="interests">Interests</button>
+    </div>
+
+    <div class="address-bar-container">
+      <button class="nav-btn" id="profile-prev" type="button" aria-label="Hide profile picture">&lt;</button>
+      <button class="nav-btn" id="profile-next" type="button" aria-label="Show profile picture">&gt;</button>
+      <button class="nav-btn" id="profile-plus" type="button" aria-label="Add profile item">+</button>
+      <button class="nav-btn refresh-button" type="button" aria-label="Refresh profile tab">&#x21bb;</button>
+      <input class="address-input" type="text" value="https://YouKnowHome.github.io/" readonly>
+      <button class="nav-btn profile-eye-button" type="button" aria-label="Show clock and credits" aria-pressed="false">&#128065;</button>
+    </div>
+
+    <div class="content-body">
+      <img class="rules-window-wallpaper" src="https://media1.tenor.com/m/cxZ2d_12XY8AAAAd/pixelart-pixel.gif" alt="" aria-hidden="true">
+      <video class="interests-window-wallpaper" src="Assets/golden-forest-pixel-moewalls-com.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <section class="clock-home-screen" aria-hidden="true" aria-label="Clock display">
+        <div class="clock-terminal">
+          <div class="clock-terminal-heading">
+            <span>LOCAL TIME TERMINAL</span>
+            <span>SYS // HKT-08</span>
+          </div>
+          <div class="clock-digital-panel">
+            <span class="clock-digital-label">HONG KONG STANDARD TIME</span>
+            <time class="clock-home-time" data-hk-clock data-text="00:00:00" datetime="00:00:00">00:00:00</time>
+            <span class="clock-home-zone">HKT · UTC+08:00</span>
+          </div>
+          <div class="clock-terminal-footer">
+            <span>TIME SIGNAL: LIVE</span>
+            <span>SYNC // 1 SEC</span>
+          </div>
+        </div>
+        <div class="background-credits" aria-label="Background image sources">
+          <span class="background-credits-label">Background sources</span>
+          <a class="background-credit" href="https://media1.tenor.com/m/6dwKY4PCDYkAAAAd/seattle-rain.gif" target="_blank" rel="noreferrer">Seattle rain · Tenor</a>
+          <a class="background-credit" href="https://media1.tenor.com/m/cxZ2d_12XY8AAAAd/pixelart-pixel.gif" target="_blank" rel="noreferrer">Rules wallpaper · Tenor</a>
+          <a class="background-credit" href="https://moewalls.com/pixel-art/golden-forest-pixel-live-wallpaper/" target="_blank" rel="noreferrer">Golden Forest · MoeWalls</a>
+        </div>
+      </section>
+      <div class="sidebar">
+        <div class="avatar-box">
+          <img class="home-avatar" src="https://media.discordapp.net/stickers/1504583511787438240.png?size=240" alt="Profile picture">
+          <img class="rules-avatar" src="https://media1.tenor.com/m/MTsknTDJ9JEAAAAd/klein-moretti-klein.gif" alt="Klein Moretti profile picture">
+        </div>
+        <div class="handle-tag">@愛書家|YouKnowMe</div>
+        <a class="location-link" href="https://globaia.org/cosmos/" target="_blank" rel="noreferrer" aria-label="Explore the GLOBAÏA Atlas of the Cosmos">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15s5-5.2 5-9A5 5 0 0 0 3 6c0 3.8 5 9 5 9Zm0-6.8A2.2 2.2 0 1 1 8 3.8a2.2 2.2 0 0 1 0 4.4Z"/></svg>
+          <span>宇宙 (刚被赶过来)</span>
+        </a>
+        <div class="sidebar-clock-wrap">
+          <div class="sidebar-analog" aria-hidden="true">
+            <svg class="sidebar-clock-face" viewBox="0 0 120 120">
+              <circle class="clock-outer-ring" cx="60" cy="60" r="56" />
+              <circle class="clock-inner-ring" cx="60" cy="60" r="51" />
+              <path class="clock-hour-marks" d="M60 11v5 M84.5 17.6l-2.5 4.3 M102.4 35.5l-4.3 2.5 M109 60h-5 M102.4 84.5l-4.3-2.5 M84.5 102.4l-2.5-4.3 M60 109v-5 M35.5 102.4l2.5-4.3 M17.6 84.5l4.3-2.5 M11 60h5 M17.6 35.5l4.3 2.5 M35.5 17.6l2.5 4.3" />
+              <g class="clock-roman-numerals">
+                <text x="60" y="27">XII</text>
+                <text x="78" y="32">I</text>
+                <text x="91" y="45">II</text>
+                <text x="96" y="63">III</text>
+                <text x="90" y="81">IV</text>
+                <text x="77" y="94">V</text>
+                <text x="60" y="99">VI</text>
+                <text x="43" y="94">VII</text>
+                <text x="29" y="81">VIII</text>
+                <text x="24" y="63">IX</text>
+                <text x="29" y="45">X</text>
+                <text x="42" y="32">XI</text>
+              </g>
+            </svg>
+            <span class="clock-hand clock-hour-hand"></span>
+            <span class="clock-hand clock-minute-hand"></span>
+            <span class="clock-hand clock-second-hand"></span>
+            <span class="clock-hand-pin"></span>
+          </div>
+          <time class="sidebar-clock-digital" data-hk-clock>00:00:00</time>
+          <span class="sidebar-clock-zone">HONG KONG · HKT</span>
+        </div>
+      </div>
+
+      <div class="main-info">
+        <div class="profile-clock">
+          <button class="clock-bell" id="bell-button" type="button" aria-label="Ring notification bell">
+            <svg class="bell-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm8-5H4v-1.5l1.7-1.7V9a6.3 6.3 0 0 1 5.3-6.2V2a1 1 0 0 1 2 0v.8A6.3 6.3 0 0 1 18.3 9v4.8l1.7 1.7V17Z"/>
+            </svg>
+          </button>
+          <span class="clock-label">Your time is!</span>
+          <span class="profile-date" id="profile-date">Sep 25, 2026</span>
+          <time id="profile-clock">00:00:00</time>
+        </div>
+        <div class="info-notes">
+          <div class="info-row"><span class="label">names:</span><span>YouKnowMe / Yuno / Yunomi <span class="names-control" id="names-control"><button class="names-toggle" id="names-toggle" type="button" aria-expanded="false" aria-controls="more-names">+</button>
+            <span class="more-names" id="more-names" role="dialog" aria-label="More names" hidden>
+              <span class="more-names-title">More names:</span>
+              <ul>
+                <li><a href="https://youtu.be/FsGdznlfE2U?si=hdX49CU0ykkWtUua" target="_blank" rel="noreferrer">NYC</a></li>
+                <li>YK</li>
+                <li>YKM</li>
+                <li>IFYKYK</li>
+                <li>独角兽</li>
+                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=rcU80MwdLNdmDgmI" target="_blank" rel="noreferrer">SomeoneYouPropablyKnow</a></li>
+                <li><a href="https://youtu.be/8UVNT4wvIGY?si=3BpJ_MJX3_H7jIO9" target="_blank" rel="noreferrer">SomebodyYouUsedToKnow</a></li>
+                <li>YouKnowCorn (Unicorn)</li>
+                <li>theunicornthatliuxiaoislookingfor</li>
+                <li>TheOneWhoHasAQuestionableSleepSchedule</li>
+                <li>TheLocalWormOfTimeWhoDoesn'tHaveASenseOfTime</li>
+              </ul>
+            </span></span></div>
+          <div class="info-row"><span class="label">birthday:</span><span>29th of June</span></div>
+          <div class="info-row"><span class="label">pronouns:</span><span>She/They</span></div>
+          <div class="info-row"><span class="label">+</span><span>From HK, intp-t, Cancer, UTC+8</span></div>
+          <div class="info-row"><span class="label">likes:</span><span> anything work of fiction or non-fiction, oats, writing, coding, spicy food, unicorns, monocles</span></div>
+          <div class="info-row"><span class="label">dislikes:</span><span>loud noises, crowded places, disregard of boundaries, disrespect</span></div>
+
+          <div class="social-links" aria-label="Social links">
+            <a href="https://www.youtube.com/channel/UCqeY0HJVTgC6XGTkUaXSHeQ" class="social-icon" aria-label="YouTube channel" target="_blank" rel="noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/128/152/152810.png" alt="">
+            </a>
+            <a href="https://x.com/WormOfDestiny" class="social-icon" aria-label="X profile" target="_blank" rel="noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" alt="">
+            </a>
+            <a href="https://github.com/TheManifestationOfAllErrors" class="social-icon" aria-label="GitHub profile" target="_blank" rel="noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/128/2111/2111432.png" alt="">
+            </a>
+            <a href="https://www.tumblr.com/thewormofdestiny" class="social-icon" aria-label="Tumblr profile" target="_blank" rel="noreferrer">
+              <img src="https://cdn.simpleicons.org/tumblr/282420" alt="">
+            </a>
+            <a href="mailto:wormofspace@gmail.com" class="social-icon" aria-label="Email">✉</a>
+          </div>
+        </div>
+      </div>
+      <section class="rules-view" aria-hidden="true" aria-labelledby="rules-heading">
+        <h2 id="rules-heading">RULES AND HOW TO INTERACT WITH ME!</h2>
+        <p>So first of all I guess everyone has morals and basic human decency and respect so i don't really have to be super formal or serious about this!</p>
+        <p>Just treat me like a normal human person and friend! Zero pressure here, we're all just chilling. However, the few things I absolutely won't tolerate (and will get you a quick one-way ticket to my block list) are:</p>
+        <ul>
+          <li>Extreme disrespect, hate speech, or harassment of any kind</li>
+          <li>Weird, out-of-nowhere NSFW DMs</li>
+          <li>Random promo spam, unwanted server invites, or ads</li>
+          <li>Ignoring my boundaries or pushing me when I say no</li>
+        </ul>
+        <p>As long as we're avoiding all that chaos, we are totally good!</p>
+        <p>For names, call me by my display name or whatever fun nickname you come up with—just keep it respectful and not weird, and we're golden.</p>
+        <p>Also, fair warning: I'm definitely more on the reserved/quiet side! I love my peaceful space, so please don't spam ping me, chain-call me, or panic if I take a bit to respond. I'll get back to you whenever I'm free and have the social battery for it!</p>
+        <p>Overall if you're cool to me I am also cool to you, I hope we have a deal!!! </p>
+        <p>I hope the ghost scare you!! I'll send them to your house if you're brave enough to not follow them rules!</p>
+      </section>
+      <section class="interests-view" aria-hidden="true" aria-label="Interests">
+        <div class="interest-welcome" data-interest-welcome>
+          <div class="interest-welcome-panel">
+            <p class="interest-welcome-kicker">PERSONAL ARCHIVE // ACCESS POINT</p>
+            <h2>welcome</h2>
+            <p class="interest-welcome-question">Would you like to proceed?</p>
+            <button class="interest-enter-button" type="button" data-enter-interests>
+              <span>enter?</span>
+            </button>
+          </div>
+        </div>
+        <div class="game-select-screen" data-interest-cards hidden>
+          <header class="game-select-header">
+            <button class="game-select-back" type="button" data-interest-back aria-label="Back to welcome">BACK</button>
+            <h2 class="game-select-title">GAME SELECT</h2>
+            <span class="game-select-index">SELECT FILE</span>
+          </header>
+          <div class="save-file-list">
+            <div class="save-file-card save-file-card-gif" data-game-card>
+              <img class="save-file-background" src="Assets/Recording/LinkClick.gif" alt="" aria-hidden="true">
+              <button class="save-file-play" type="button" aria-label="Play Link Click, coming soon">
+                <span class="save-file-play-icon" aria-hidden="true">▶</span>
+                <span>PLAY</span>
+              </button>
+              <span class="game-status-link" aria-hidden="true"></span>
+              <div class="game-status-panel">
+                <span class="game-status-heading">SERIES STATUS // ONGOING</span>
+                <ul class="game-status-list">
+                  <li><span>Season 1</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 2</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 3 Part 1</span><strong>COMPLETED</strong></li>
+                  <li><span>Chibi series · Seasons 1-2</span><strong>COMPLETED</strong></li>
+                  <li><span>Manhua</span><strong>READING</strong></li>
+                  <li><span>Live action</span><strong>NOT WATCHED</strong></li>
+                </ul>
+              </div>
+            </div>
+            <div class="save-file-card save-file-card-video" data-game-card hidden>
+              <video class="save-file-background" src="Assets/Recording/LordOfTheMysteries.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+              <button class="save-file-play" type="button" aria-label="Play Lord of the Mysteries, coming soon">
+                <span class="save-file-play-icon" aria-hidden="true">▶</span>
+                <span>PLAY</span>
+              </button>
+              <span class="game-status-link" aria-hidden="true"></span>
+              <div class="game-status-panel game-status-panel-mystic">
+                <span class="game-status-heading">SERIES STATUS // ONGOING</span>
+                <span class="game-status-category">NOVELS</span>
+                <ul class="game-status-list">
+                  <li><span>Lord of Mysteries (Book 1)</span><strong>COMPLETED // REREADING</strong></li>
+                  <li><span>Lord of Mysteries 2: Circle of Inevitability (Book 2)</span><strong>COMPLETED // REREADING</strong></li>
+                </ul>
+                <span class="game-status-category">DONGHUA</span>
+                <ul class="game-status-list">
+                  <li><span>Season 1</span><strong>COMPLETED</strong></li>
+                  <li><span>Special Episodes</span><strong>COMPLETED</strong></li>
+                  <li><span>Old Neil's Mysticism Class</span><strong>COMPLETED</strong></li>
+                </ul>
+              </div>
+            </div>
+            <div class="save-file-card save-file-card-video-new" data-game-card hidden>
+              <video class="save-file-background" src="Assets/Recording/BungoStrayDogs.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+              <button class="save-file-play" type="button" aria-label="Play Bungo Stray Dogs, coming soon">
+                <span class="save-file-play-icon" aria-hidden="true">▶</span>
+                <span>PLAY</span>
+              </button>
+              <span class="game-status-link" aria-hidden="true"></span>
+              <div class="game-status-panel game-status-panel-mystic game-status-panel-bsd">
+                <span class="game-status-heading">SERIES STATUS // ONGOING</span>
+                <span class="game-status-category">MAIN ANIME</span>
+                <ul class="game-status-list">
+                  <li><span>Season 1</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 2</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 3</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 4</span><strong>WATCHING</strong></li>
+                  <li><span>Season 5</span><strong>NOT WATCHED</strong></li>
+                </ul>
+                <span class="game-status-category">OVA</span>
+                <ul class="game-status-list">
+                  <li><span>Hitori Ayumu</span><strong>COMPLETED</strong></li>
+                </ul>
+                <span class="game-status-category">MOVIES</span>
+                <ul class="game-status-list">
+                  <li><span>Dead Apple</span><strong>COMPLETED</strong></li>
+                </ul>
+                <span class="game-status-category">CHIBI SERIES · WAN!</span>
+                <ul class="game-status-list">
+                  <li><span>Season 1</span><strong>COMPLETED</strong></li>
+                  <li><span>Season 2</span><strong>NOT WATCHED</strong></li>
+                  <li><span>Wan! · Manga</span><strong>NOT YET READ</strong></li>
+                </ul>
+                <span class="game-status-category">LIVE ACTION</span>
+                <ul class="game-status-list">
+                  <li><span>Beast</span><strong>NOT WATCHED</strong></li>
+                </ul>
+                <span class="game-status-category">MAIN MANGA</span>
+                <ul class="game-status-list">
+                  <li><span>Volume 29 · Chapter 117</span><strong>READING</strong></li>
+                </ul>
+                <span class="game-status-category">MANGA SPIN-OFFS</span>
+                <ul class="game-status-list">
+                  <li><span>Beast · Manga adaptation</span><strong>COMPLETED</strong></li>
+                  <li><span>Dead Apple · Manga adaptation</span><strong>READING</strong></li>
+                  <li><span>Gaiden (Another Story)</span><strong>READING</strong></li>
+                  <li><span>Dazai, Chūya, Age Fifteen</span><strong>NOT YET READ</strong></li>
+                  <li><span>The Untold Origins of the Detective Agency</span><strong>NOT YET READ</strong></li>
+                  <li><span>STORM BRINGER</span><strong>NOT YET READ</strong></li>
+                  <li><span>The Day I Took in Dazai</span><strong>NOT YET READ</strong></li>
+                  <li><span>The Official Comic Anthology</span><strong>NOT YET READ</strong></li>
+                </ul>
+                <span class="game-status-category">LIGHT NOVELS</span>
+                <ul class="game-status-list">
+                  <li><span>Vol. 1 · Osamu Dazai's Entrance Exam</span><strong>COMPLETED</strong></li>
+                  <li><span>Vol. 2 · Osamu Dazai and the Dark Era</span><strong>COMPLETED</strong></li>
+                  <li><span>Vol. 3 · The Untold Story of the Founding of the Detective Agency</span><strong>COMPLETED</strong></li>
+                  <li><span>Vol. 4 · 55 Minutes</span><strong>NOT READ</strong></li>
+                  <li><span>Vol. 5 · Dead Apple</span><strong>NOT READ</strong></li>
+                  <li><span>Vol. 6 · Beast</span><strong>NOT READ</strong></li>
+                  <li><span>Vol. 7 · Dazai, Chuuya, Age Fifteen</span><strong>NOT READ</strong></li>
+                  <li><span>Vol. 8 · Storm Bringer</span><strong>NOT READ</strong></li>
+                  <li><span>Vol. 9 · The Day I Picked Up Dazai</span><strong>NOT READ</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <nav class="game-select-controls" aria-label="Game selection">
+            <button class="game-select-arrow" type="button" data-game-previous aria-label="Previous game">◀</button>
+            <span class="game-select-counter" data-game-index aria-live="polite">01 / 03</span>
+            <button class="game-select-arrow" type="button" data-game-next aria-label="Next game">▶</button>
+          </nav>
+        </div>
+      </section>
+      <div class="interest-refresh-boot" aria-hidden="true">
+        <span class="interest-refresh-label">REBOOTING INTERESTS</span>
+        <span class="interest-refresh-progress"><span></span></span>
+        <span class="interest-refresh-status">RE-SYNCHRONIZING ARCHIVE...</span>
+      </div>
+      <div class="tab-refresh-screen" aria-hidden="true" role="status" aria-live="polite">
+        <svg class="refresh-hourglass" viewBox="0 0 48 48" aria-hidden="true">
+          <path class="hourglass-frame" d="M13 6h22M13 42h22M16 7c0 8 3 12 8 17-5 5-8 9-8 17M32 7c0 8-3 12-8 17 5 5 8 9 8 17" />
+          <path class="hourglass-sand" d="M18 11h12l-6 10zM18 37h12l-6-10z" />
+        </svg>
+        <span>Refreshing...</span>
+      </div>
+      <section class="coming-soon-screen" data-coming-soon-screen role="dialog" aria-modal="true" aria-labelledby="coming-soon-title" hidden>
+        <div class="coming-soon-panel">
+          <span class="coming-soon-kicker">SYSTEM MESSAGE // 000</span>
+          <h2 id="coming-soon-title">COMING SOON</h2>
+          <p>THIS FEATURE IS STILL IN DEVELOPMENT</p>
+          <button class="coming-soon-back" type="button" data-coming-soon-back>BACK TO GAME SELECT</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
